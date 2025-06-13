@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>梦女陪伴计时器</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/gh/Nnian321/Fonts@main/%E7%97%85%E7%97%87%E5%B0%8F%E7%8C%AB%20.woff2" rel="stylesheet" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face {
+      font-family: 'SickCat';
+      src: url('https://cdn.jsdelivr.net/gh/Nnian321/Fonts@main/%E7%97%85%E7%97%87%E5%B0%8F%E7%8C%AB%20.woff2') format('woff2');
+      font-display: swap;
+    }
+  </style>
+</head>
+<div id="end-overlay" class="overlay-screen" style="display: none;">
+  <div class="overlay-textbox">
+    <div id="end-message">我会在下次也陪你。</div>
+    <div class="overlay-hint">（点击此处刷新页面）</div>
+  </div>
+</div>
+
+<body>
+  <div class="timer-box">
+    <div id="character" class="character"></div>
+    <div id="mode-toggle" class="mode-toggle">当前模式：累计计时</div>
+    <div class="timer-frame">
+      <div id="timer" class="timer-display">00:00:00</div>
+    </div>
+
+    <div class="button-row" id="set-buttons" style="display: none;">
+      <button id="hour-btn">+1 时</button>
+      <button id="minute-btn">+1 分</button>
+      <button id="second-btn">+1 秒</button>
+    </div>
+
+    <div class="button-row">
+      <button id="start-btn">开始</button>
+      <button id="end-btn" class="end-button">结束陪伴</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
