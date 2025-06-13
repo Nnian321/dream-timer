@@ -9,6 +9,7 @@ body {
   font-family: 'SickCat', sans-serif;
   background-image: url('https://raw.githubusercontent.com/Nnian321/bg/main/BZ-714_momo_.png');
   display: flex;
+  background-position: center;
   justify-content: center;
   align-items: center;
   height: 100vh;
