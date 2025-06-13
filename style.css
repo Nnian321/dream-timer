@@ -1,136 +1,141 @@
+@font-face {
+  font-family: 'SickCat';
+  src: url('https://cdn.jsdelivr.net/gh/wxyatdream/fonts/sickcat.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: #fff1f6;
   font-family: 'SickCat', sans-serif;
+  background: #fdf7f7;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 .timer-box {
-  background: #fff;
-  border-radius: 30px;
-  padding: 40px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 92vw;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  padding: 24px 20px;
+  box-sizing: border-box;
   text-align: center;
   position: relative;
-  width: 320px;
+  transition: all 0.3s ease-in-out;
 }
 
 .character {
-  height: 48px;
-  margin-bottom: 8px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .mode-toggle {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 8px;
-  cursor: pointer;
+  font-size: 17px;
+  margin-bottom: 12px;
+  color: #444;
 }
 
 .timer-frame {
-  background: #fce8ef;
-  border-radius: 24px;
-  padding: 10px;
-  box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.4),
-              0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e6dada;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
 .timer-display {
-  font-size: 48px;
-  color: #333;
-  padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.4);
-  border: 2px solid #f0d5df;
-  border-radius: 16px;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4),
-              0 2px 6px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4px);
-  margin: 20px 0;
+  font-size: 40px;
+  font-weight: bold;
+  color: #222;
 }
 
 .button-row {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
-  justify-content: center;
-  margin-bottom: 14px;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 button {
-  font-family: 'SickCat', sans-serif;
-  font-size: 16px;
-  padding: 10px 16px;
+  flex: 1;
+  padding: 13px 10px;
+  font-size: 17px;
+  border-radius: 12px;
   border: none;
-  border-radius: 24px;
-  background-color: #fde0ec;
-  color: #444;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.1s ease;
-}
-
-button:hover {
-  background-color: #fbcfe8;
+  background-color: #ffe3e3;
+  color: #333;
+  font-family: 'SickCat', sans-serif;
+  transition: background-color 0.2s ease;
 }
 
 button:active {
-  transform: scale(0.95);
+  transform: scale(0.97);
+  background-color: #ffcfcf;
 }
 
 .end-button {
-  background-color: #fddfe6;
-  border-radius: 20px;
+  background-color: #ffd2d2;
 }
 
 .dream-text {
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 10px 14px;
   font-size: 15px;
-  color: #444;
+  max-width: 80vw;
+  word-break: break-word;
   pointer-events: none;
-  animation: fadeOut 3s ease forwards;
-  font-family: 'SickCat', sans-serif;
-  z-index: 99;
+  color: #444;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  animation: fadeOut 3s forwards;
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; transform: translateY(0); }
-  90% { opacity: 1; }
+  0% { opacity: 1; }
+  80% { opacity: 1; }
   100% { opacity: 0; transform: translateY(-10px); }
 }
+
 .overlay-screen {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 240, 245, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 999;
+  justify-content: center;
+  z-index: 9999;
   flex-direction: column;
-  text-align: center;
 }
 
 .overlay-textbox {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 24px;
-  padding: 24px 32px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  font-family: 'SickCat', sans-serif;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 80vw;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 #end-message {
-  font-size: 20px;
-  color: #444;
-  margin-bottom: 12px;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .overlay-hint {
   font-size: 14px;
-  color: #888;
+  color: #666;
 }
