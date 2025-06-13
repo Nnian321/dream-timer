@@ -16,17 +16,18 @@ body {
 }
 
 .timer-box {
-  width: 92vw;
-  max-width: 420px;
+  width: 100vw;
+  max-width: 500px;
   background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  padding: 24px 20px;
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  padding: 28px 24px;
   box-sizing: border-box;
   text-align: center;
   position: relative;
   transition: all 0.3s ease-in-out;
+  transform: scale(1.2); /* 放大整体盒子 */
 }
 
 .character {
@@ -37,7 +38,7 @@ body {
 }
 
 .mode-toggle {
-  font-size: 17px;
+  font-size: 20px;
   margin-bottom: 12px;
   color: #444;
 }
@@ -51,24 +52,27 @@ body {
 }
 
 .timer-display {
-  font-size: 40px;
+  font-size: 56px;
   font-weight: bold;
   color: #222;
+  padding: 16px 20px;
 }
 
 .button-row {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin: 10px 0;
+  gap: 14px;
+  margin: 16px 0;
   flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 button {
   flex: 1;
   padding: 13px 10px;
-  font-size: 17px;
-  border-radius: 12px;
+  font-size: 23px;
+  padding: 14px 20px;
+  border-radius: 14px;
   border: none;
   background-color: #ffe3e3;
   color: #333;
@@ -88,15 +92,11 @@ button:active {
 .dream-text {
   position: fixed;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 15px;
+  font-size: 20px;
   max-width: 80vw;
   word-break: break-word;
   pointer-events: none;
   color: #444;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   animation: fadeOut 3s forwards;
 }
 
@@ -138,4 +138,10 @@ button:active {
 .overlay-hint {
   font-size: 14px;
   color: #666;
+}
+
+@media screen and (max-width: 480px) {
+  .timer-box {
+    transform: scale(1.3);
+  }
 }
