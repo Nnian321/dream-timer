@@ -202,15 +202,29 @@ function tickDown() {
 }
 
 function toggleMode() {
+  if (isTimerRunning) {
+    alert("计时过程中无法切换模式，请先结束陪伴。");
+    return;
+  }
+
+  // 切换模式
   isCountdownMode = !isCountdownMode;
   modeToggle.textContent = "当前模式：" + (isCountdownMode ? "倒计时" : "累计计时");
+
+  // 显示 / 隐藏设置按钮（只在倒计时模式下）
   setButtons.style.display = isCountdownMode ? "flex" : "none";
+
+  // 重置时间和点击状态
   resetTime();
+  clickCount = 0;
+  clickDisabled = false;
+  firstClickTime = null;
 }
 
 function resetTime() {
   clearInterval(timerInterval);
   isRunning = false;
+  isTimerRunning = false;  // ✅ 同步关闭状态
   startBtn.textContent = "开始";
   hours = minutes = seconds = totalSeconds = 0;
   updateTimer();
